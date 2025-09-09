@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import TarjetaJoaquin from "./components/TarjetaJoaquin";
 import Titulo from "./components/Titulo";
 
 export default function App() {
@@ -28,6 +29,13 @@ export default function App() {
         ></Titulo> */}
 
         {/* aqui va a ir un contenedor con la tarjeta de todos los alumnos */}
+        <div>
+          <TarjetaJoaquin></TarjetaJoaquin>
+          <TarjetaJoaquin></TarjetaJoaquin>
+          <TarjetaJoaquin></TarjetaJoaquin>
+          <TarjetaJoaquin></TarjetaJoaquin>
+          <TarjetaJoaquin></TarjetaJoaquin>
+        </div>
       </main>
       {/* aqui va air un footer */}
     </>
