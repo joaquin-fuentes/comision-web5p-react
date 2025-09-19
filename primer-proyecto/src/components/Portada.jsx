@@ -7,7 +7,8 @@ export default function Portada({ titulo, subTitulo }) {
         position: "relative",
         height: "100vh",
         width: "100%",
-        backgroundImage: "url('https://via.placeholder.com/1920x1080')",
+        backgroundImage:
+          "url('https://wallpapers.com/images/hd/anime-4k-pictures-9n8qdbx5o639w6s6.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         display: "flex",

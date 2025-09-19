@@ -14,6 +14,7 @@ export default function Header() {
     });
     console.log(usuarioLogueado);
   }
+  
   return (
     <header>
       <nav className="nav-bar">

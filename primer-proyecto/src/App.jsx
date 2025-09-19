@@ -1,6 +1,9 @@
 import Header from "./components/Header";
 import Portada from "./components/Portada";
+import TablaAlumnos from "./components/admin/TablaAlumnos";
 import TarjetaAlumno from "./components/TarjetaAlumno";
+import Contador from "./components/Contador";
+import ListadoEsculturas from "./components/esculturas/ListadoEsculturas";
 
 export default function App() {
   // lo que va aqui es Javascript
@@ -42,12 +45,23 @@ export default function App() {
       marca: "Nike",
       pelicula: "El señor de los anillos",
     },
+    {
+      nombre: "Sofia",
+      urlImagen: `https://randomuser.me/api/portraits/men/${Math.floor(
+        Math.random() * 90
+      )}.jpg`,
+      pasatiempo: "Programar",
+      marca: "Adidas",
+      pelicula: "El señor de los anillos",
+    },
   ];
 
   return (
     <>
       <Header></Header>
       <main>
+        {/* <ListadoEsculturas></ListadoEsculturas> */}
+        {/* <Contador></Contador> */}
         <Portada
           titulo={tituloDeLaSeccion}
           subTitulo="Hola soy un subtitulo"
@@ -60,27 +74,7 @@ export default function App() {
           })}
         </div>
         {/* Devolver una tabla de alumnos */}
-        <div>
-          <table border={1}>
-            <thead>
-              <tr>
-                <th>Nombre</th>
-                <th>Pasatiempo</th>
-                <th>Marca</th>
-                <th>Pelicula</th>
-              </tr>
-            </thead>
-            <tbody>
-              {/* una fila de un alumno */}
-              <tr>
-                <td>Joaquin</td>
-                <td>Pasear a firulais</td>
-                <td>Adidas</td>
-                <td>Titanic</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <TablaAlumnos alumnos={alumnos}></TablaAlumnos>
         <br />
         <br />
         <br />
