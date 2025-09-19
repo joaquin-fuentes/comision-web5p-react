@@ -1,5 +1,8 @@
+//  En este componente deben actualizar el diseño para que quede mas agradable, usando clases de bootstrap,
+//  bootstrap ya esta instalado asi que solamente deben agregar los nombres de las clases donde corresponda
+//  solamente actualizar diseño... La lógica de reenderizado condicional se debe mantener como está
+
 import Swal from "sweetalert2";
-import "../header.css";
 
 export default function Header() {
   const usuarioAdministrador = false;
@@ -14,16 +17,16 @@ export default function Header() {
     });
     console.log(usuarioLogueado);
   }
-  
+
   return (
-    <header>
-      <nav className="nav-bar">
-        <div className="nav-bar_logo">
+    <header className="">
+      <nav className="">
+        <div className="">
           <h1>Logo</h1>
         </div>
-        <div className="nav-bar_accesos">
+        <div className="">
           <nav>
-            <ul className="contenedorItemsEnlaces">
+            <ul className="">
               <li>
                 {" "}
                 <a href="">Inicio</a>
@@ -60,7 +63,7 @@ export default function Header() {
                   </li>
                 </>
               )}
-              <button onClick={handleLogin} className="btnTarjeta">
+              <button onClick={handleLogin} className="">
                 Logueo
               </button>
             </ul>

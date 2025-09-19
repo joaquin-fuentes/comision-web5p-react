@@ -1,8 +1,8 @@
 import Header from "./components/Header";
-import Portada from "./components/Portada";
+import Portada from "./components/home/portada/Portada";
 import TablaAlumnos from "./components/admin/TablaAlumnos";
-import TarjetaAlumno from "./components/TarjetaAlumno";
-import Contador from "./components/Contador";
+import TarjetaAlumno from "./components/home/alumnos/TarjetaAlumno";
+import Contador from "./components/contador/Contador";
 import ListadoEsculturas from "./components/esculturas/ListadoEsculturas";
 
 export default function App() {
@@ -74,12 +74,15 @@ export default function App() {
           })}
         </div>
         {/* Devolver una tabla de alumnos */}
-        <TablaAlumnos alumnos={alumnos}></TablaAlumnos>
+        {/* aqui en esta seccion deben agregar titulo del a seccion, boton para agregar nuevo alumno y un input de búsqueda,
+        y decien despues de eso en la linea siguiente se llama al componente TablaAlumnos */}
+        <section>
+          <TablaAlumnos alumnos={alumnos}></TablaAlumnos>
+        </section>
         <br />
         <br />
         <br />
       </main>
-      {/* aqui va air un footer */}
     </>
   );
 }
