@@ -4,6 +4,7 @@ import TablaAlumnos from "./components/admin/TablaAlumnos";
 import TarjetaAlumno from "./components/home/alumnos/TarjetaAlumno";
 import Contador from "./components/contador/Contador";
 import ListadoEsculturas from "./components/esculturas/ListadoEsculturas";
+import Swal from "sweetalert2";
 
 export default function App() {
   // lo que va aqui es Javascript
@@ -55,6 +56,20 @@ export default function App() {
       pelicula: "El señor de los anillos",
     },
   ];
+  function handleClickBuscar() {
+    Swal.fire({
+      title: "Bien hecho!",
+      text: `Buscando alumno...`,
+      icon: "success",
+    });
+  }
+  function handleClickAgregar() {
+    Swal.fire({
+      title: "Bien hecho!",
+      text: `El alumno se agregó, con exito.`,
+      icon: "success",
+    });
+  }
 
   return (
     <>
@@ -77,6 +92,34 @@ export default function App() {
         {/* aqui en esta seccion deben agregar titulo del a seccion, boton para agregar nuevo alumno y un input de búsqueda,
         y decien despues de eso en la linea siguiente se llama al componente TablaAlumnos */}
         <section>
+          <h3 class="text-center">Gestion Alumnos</h3>
+          <div class="d-flex flex-row justify-content-center">
+            <form class="d-flex col-6 m-3" role="search">
+              <input
+                class="form-control"
+                type="search"
+                placeholder="Buscar alumno"
+              />
+              <button
+                class="btn btn-outline-primary"
+                onClick={handleClickBuscar}
+                type="submit"
+              >
+                <img
+                  src="https://img.icons8.com/?size=100&id=p3miLroKw4iR&format=png&color=000000"
+                  alt="Buscar"
+                  width="25dvh"
+                />
+              </button>
+            </form>
+            <button
+              type="button"
+              onClick={handleClickAgregar}
+              class="btn btn-outline-success m-3"
+            >
+              Agregar alumno
+            </button>
+          </div>
           <TablaAlumnos alumnos={alumnos}></TablaAlumnos>
         </section>
         <br />
