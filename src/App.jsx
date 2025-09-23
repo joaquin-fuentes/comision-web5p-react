@@ -1,12 +1,12 @@
 import Header from "./components/Header";
 import Portada from "./components/home/portada/Portada";
-import Footer from "./components/footer";
 import TablaAlumnos from "./components/admin/TablaAlumnos";
 import TarjetaAlumno from "./components/home/alumnos/TarjetaAlumno";
 import Contador from "./components/contador/Contador";
 import ListadoEsculturas from "./components/esculturas/ListadoEsculturas";
 import Swal from "sweetalert2";
 import { useState } from "react";
+import Footer from "./components/Footer.jsx";
 
 export default function App() {
   const [nombreBuscado, setNombreBuscado] = useState("");
@@ -131,7 +131,7 @@ export default function App() {
         <br />
         <br />
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }
