@@ -3,9 +3,9 @@ import FilaAlumno from "./FilaAlumno";
 export default function TablaAlumnos({ alumnos }) {
   console.log(alumnos);
   return (
-    <div class="table-responsive justify-content-center m-4">
-      <table class="table table-bordered table-hover">
-        <thead class="table-dark">
+    <div className="table-responsive justify-content-center m-4">
+      <table className="table table-bordered table-hover">
+        <thead className="table-dark">
           <tr>
             <th>ID</th>
             <th>Nombre</th>

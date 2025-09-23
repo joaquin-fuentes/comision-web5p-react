@@ -5,8 +5,12 @@ import TarjetaAlumno from "./components/home/alumnos/TarjetaAlumno";
 import Contador from "./components/contador/Contador";
 import ListadoEsculturas from "./components/esculturas/ListadoEsculturas";
 import Swal from "sweetalert2";
+import { useState } from "react";
 
 export default function App() {
+  const [nombreBuscado, setNombreBuscado] = useState("");
+  console.log(nombreBuscado);
+
   const tituloDeLaSeccion = "Listado de los mejores alumnos de RollingCode";
   const alumnos = [
     {
@@ -55,6 +59,11 @@ export default function App() {
       pelicula: "El señor de los anillos",
     },
   ];
+
+  const alumnosFiltrados = alumnos.filter((alumno) => {
+    return alumno.nombre.toLowerCase().includes(nombreBuscado.toLowerCase());
+  });
+
   function handleClickBuscar() {
     Swal.fire({
       title: "Bien hecho!",
@@ -85,16 +94,18 @@ export default function App() {
           })}
         </div>
         <section>
-          <h3 class="text-center">Gestion Alumnos</h3>
-          <div class="d-flex flex-row justify-content-center">
-            <form class="d-flex col-6 m-3" role="search">
+          <h3 className="text-center">Gestion Alumnos</h3>
+          <div className="d-flex flex-row justify-content-center">
+            <form className="d-flex col-6 m-3" role="search">
               <input
-                class="form-control"
+                className="form-control"
                 type="search"
                 placeholder="Buscar alumno"
+                value={nombreBuscado}
+                onChange={(event) => setNombreBuscado(event.target.value)}
               />
               <button
-                class="btn btn-outline-primary"
+                className="btn btn-outline-primary"
                 onClick={handleClickBuscar}
                 type="submit"
               >
@@ -108,12 +119,12 @@ export default function App() {
             <button
               type="button"
               onClick={handleClickAgregar}
-              class="btn btn-outline-success m-3"
+              className="btn btn-outline-success m-3"
             >
               Agregar alumno
             </button>
           </div>
-          <TablaAlumnos alumnos={alumnos}></TablaAlumnos>
+          <TablaAlumnos alumnos={alumnosFiltrados}></TablaAlumnos>
         </section>
         <br />
         <br />

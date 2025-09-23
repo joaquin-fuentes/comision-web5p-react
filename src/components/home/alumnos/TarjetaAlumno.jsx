@@ -1,5 +1,5 @@
-import React from "react";
 import Swal from "sweetalert2";
+import Button from "react-bootstrap/Button";
 
 const TarjetaAlumno = ({ alumno }) => {
   const { nombre, urlImagen, pasatiempo, marca, pelicula } = alumno;
@@ -48,9 +48,9 @@ const TarjetaAlumno = ({ alumno }) => {
       <p style={{ margin: "5px 0" }}>
         <strong>Película favorita:</strong> {pelicula}
       </p>
-      <button onClick={handleClick} className="btnTarjeta">
+      <Button onClick={handleClick} variant="primary">
         Agregar a favoritos
-      </button>
+      </Button>
     </div>
   );
 };

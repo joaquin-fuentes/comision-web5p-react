@@ -23,18 +23,18 @@ export default function FilaAlumno({ alumno }) {
       <td className="">{alumno.pasatiempo}</td>
       <td className="">{alumno.marca}</td>
       <td className="">{alumno.pelicula}</td>
-      <td class="d-flex justify-content-around">
+      <td className="d-flex justify-content-around">
         <button
           type="button"
           onClick={handleClickEditar}
-          class="btn btn-outline-secondary"
+          className="btn btn-outline-secondary"
         >
           Editar
         </button>
         <button
           type="button"
           onClick={handleClickEliminar}
-          class="btn btn-outline-danger"
+          className="btn btn-outline-danger"
         >
           Eliminar a {alumno.nombre}
         </button>

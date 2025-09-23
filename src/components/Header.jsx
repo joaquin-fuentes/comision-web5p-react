@@ -3,20 +3,27 @@ import "./header.css";
 import { useState } from "react";
 
 export default function Header() {
+  const [menu, setMenu] = useState(false);
+  const [usuarioLogueado, setUsuarioLogueado] = useState(false);
+
   const usuarioAdministrador = true;
-  let usuarioLogueado = true;
 
   function handleLogin() {
-    usuarioLogueado = true;
+    setUsuarioLogueado(true);
     Swal.fire({
       title: "Bien hecho!",
       text: `Login exitoso`,
       icon: "success",
     });
-    console.log(usuarioLogueado);
   }
-
-  const [menu, setMenu] = useState(false);
+  function handleLogout() {
+    setUsuarioLogueado(false);
+    Swal.fire({
+      title: "Bien hecho!",
+      text: `Sesion cerrada con exito`,
+      icon: "success",
+    });
+  }
 
   const handleOpenMenu = () => {
     setMenu(!menu);
@@ -47,7 +54,7 @@ export default function Header() {
             <a href="#">Contacto</a>
           </li>
 
-          {usuarioAdministrador ? (
+          {usuarioAdministrador && usuarioLogueado ? (
             <li>
               {" "}
               <a href="#">Admin</a>
@@ -60,7 +67,10 @@ export default function Header() {
             {usuarioLogueado ? (
               <>
                 <li>
-                  <button className="navbar_menu_btn-logout">
+                  <button
+                    className="navbar_menu_btn-logout"
+                    onClick={handleLogout}
+                  >
                     Cerrar sesión
                   </button>
                 </li>
@@ -77,7 +87,11 @@ export default function Header() {
             ) : (
               <>
                 <li>
-                  <button className="navbar_menu_btn-login" href="#">
+                  <button
+                    className="navbar_menu_btn-login"
+                    href="#"
+                    onClick={handleLogin}
+                  >
                     Login
                   </button>
                 </li>
@@ -88,9 +102,6 @@ export default function Header() {
                 </li>
               </>
             )}
-            <button className="d-none" onClick={handleLogin}>
-              Logueo
-            </button>
           </ul>
         </ul>
       </nav>
