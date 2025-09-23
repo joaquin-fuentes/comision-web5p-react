@@ -2,7 +2,6 @@
   --boton-bg: #c8c8c8;
 }
 
-/* CSS GENERAL */
 header {
   flex-direction: column;
   background-color: rgb(255, 255, 255);
@@ -24,7 +23,6 @@ ul {
   margin: 0px;
 }
 
-/* NAV-BAR */
 .navbar {
   justify-content: space-between;
   align-items: center;
@@ -74,7 +72,7 @@ li {
   }
 }
 
-/* MENU HAMBURGUESA */
+
 .navbar_menu-btn {
   border: none;
   padding: 5px 10px;
@@ -98,7 +96,7 @@ li {
   display: none;
 }
 
-/* BOTONES  */
+
 .navbar_menu_btn-container {
   flex-direction: row;
   align-items: center;
@@ -168,7 +166,7 @@ li {
   }
 }
 
-/* MEDIA QUERIES */
+
 @media (min-width: 1020px) {
   header {
     flex-direction: row;

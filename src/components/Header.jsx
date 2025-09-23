@@ -1,7 +1,3 @@
-//  En este componente deben actualizar el diseño para que quede mas agradable, usando clases de bootstrap,
-//  bootstrap ya esta instalado asi que solamente deben agregar los nombres de las clases donde corresponda
-//  solamente actualizar diseño... La lógica de reenderizado condicional se debe mantener como está
-
 import Swal from "sweetalert2";
 import "./header.css";
 import { useState } from "react";
@@ -20,10 +16,10 @@ export default function Header() {
     console.log(usuarioLogueado);
   }
 
-  const [menuAbierto, setMenuAbierto] = useState(false);
+  const [menu, setMenu] = useState(false);
 
-  const abrir = () => {
-    setMenuAbierto(!menuAbierto);
+  const handleOpenMenu = () => {
+    setMenu(!menu);
   };
 
   return (
@@ -33,7 +29,7 @@ export default function Header() {
           <h1>Logo</h1>
         </div>
         <div className="navbar_menu d-flex">
-          <button className="navbar_menu-btn" onClick={abrir}>
+          <button className="navbar_menu-btn" onClick={handleOpenMenu}>
             <img
               src="https://stremu.netlify.app/icons/menu_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg"
               alt=""
@@ -41,22 +37,21 @@ export default function Header() {
           </button>
         </div>
       </nav>
-      <nav className={menuAbierto ? "mostrar" : "ocultar"}>
+      <nav className={menu ? "mostrar" : "ocultar"}>
         <ul className="navbar_menu_links list-unstyled d-flex">
           <li>
             {" "}
-            <a href="">Inicio</a>
+            <a href="#">Inicio</a>
           </li>
           <li>
             {" "}
-            <a href="">Contacto</a>
+            <a href="#">Contacto</a>
           </li>
 
-          {/* solo puede ver un usuario administrador */}
           {usuarioAdministrador ? (
             <li>
               {" "}
-              <a href="">Admin</a>
+              <a href="#">Admin</a>
             </li>
           ) : (
             <></>
@@ -66,7 +61,7 @@ export default function Header() {
             {usuarioLogueado ? (
               <>
                 <li>
-                  <button className="navbar_menu_btn-logout" href="">
+                  <button className="navbar_menu_btn-logout">
                     Cerrar sesión
                   </button>
                 </li>
@@ -83,12 +78,12 @@ export default function Header() {
             ) : (
               <>
                 <li>
-                  <button className="navbar_menu_btn-login" href="">
+                  <button className="navbar_menu_btn-login" href="#">
                     Login
                   </button>
                 </li>
                 <li>
-                  <button className="navbar_menu_btn-register" href="">
+                  <button className="navbar_menu_btn-register" href="#">
                     Registro
                   </button>
                 </li>
