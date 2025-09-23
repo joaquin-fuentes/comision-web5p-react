@@ -84,7 +84,7 @@ export default function App() {
         <br />
         <br />
       </main>
-      <Footer></Footer>
+      <Footer/>
     </>
   );
 }
