@@ -21,7 +21,6 @@ export default function Header() {
   const handleOpenMenu = () => {
     setMenu(!menu);
   };
-
   return (
     <header className="d-flex m-auto position-sticky top-0">
       <nav className="navbar d-flex">
@@ -32,7 +31,7 @@ export default function Header() {
           <button className="navbar_menu-btn" onClick={handleOpenMenu}>
             <img
               src="https://stremu.netlify.app/icons/menu_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg"
-              alt=""
+              alt="icono para abrir el menú"
             />
           </button>
         </div>
@@ -69,7 +68,7 @@ export default function Header() {
                   <button className="navbar_menu_btn-user d-flex justify-content-center align-items-center">
                     <img
                       src="https://randomuser.me/api/portraits/men/23.jpg"
-                      alt=""
+                      alt="imagen de perfil del usuario"
                     />
                     {""}
                   </button>
