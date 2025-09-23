@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import Portada from "./components/home/portada/Portada";
+import Footer from "./components/footer";
 import TablaAlumnos from "./components/admin/TablaAlumnos";
 import TarjetaAlumno from "./components/home/alumnos/TarjetaAlumno";
 import Contador from "./components/contador/Contador";
@@ -130,6 +131,7 @@ export default function App() {
         <br />
         <br />
       </main>
+      <Footer/>
     </>
   );
 }
