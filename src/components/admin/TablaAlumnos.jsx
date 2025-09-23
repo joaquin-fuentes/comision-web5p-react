@@ -1,7 +1,4 @@
-// En este componente deben actualizar rl diseño de la tabla usando clases de bootstrap
-
 import FilaAlumno from "./FilaAlumno";
-
 
 export default function TablaAlumnos({ alumnos }) {
   console.log(alumnos);

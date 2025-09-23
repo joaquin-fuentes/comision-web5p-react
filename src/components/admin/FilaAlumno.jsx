@@ -1,5 +1,3 @@
-// En este componente deben agregar boton para "Eliminar" y otro para "Editar", los 2 botones deben estar en una columna de "Acciones"
-// Al hacr click sobre alguno de esos botones se debe ejectutar una funcion que solamente muestre un console.log indicando que se hizo click en ese boton
 import React from "react";
 import Swal from "sweetalert2";
 
@@ -20,7 +18,7 @@ export default function FilaAlumno({ alumno }) {
   }
   return (
     <tr>
-      <td className="">{}</td>
+      <td className=""></td>
       <td className="">{alumno.nombre}</td>
       <td className="">{alumno.pasatiempo}</td>
       <td className="">{alumno.marca}</td>
