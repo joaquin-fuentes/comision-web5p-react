@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./listadotareas.css";
 
 export default function ListadoTareas() {
   const [tarea, setTarea] = useState("");
@@ -16,21 +17,46 @@ export default function ListadoTareas() {
 
   return (
     <>
-      <h1>Bienvenido</h1>
-      <h3>Ingresa tus tareas</h3>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          onChange={(event) => setTarea(event.target.value)}
-          value={tarea}
-        />
-        <button type="submit">Guardar Tarea</button>
-      </form>
-      <ul>
-        {listadoTareas.map((tarea, indice) => {
-          return <li key={indice}>{tarea}</li>;
-        })}
-      </ul>
+      <section className="list-task-content">
+        <article className="list-task">
+          <div className="list-task_cabecera">
+            <img
+              src="https://stremu.netlify.app/icons/fondo-de-papel-tapiz-artistico-borroso-y-colorido.jpg"
+              alt=""
+            />
+            <h1>Bienvenido</h1>
+            <h3>Ingresa tus tareas</h3>
+          </div>
+
+          <form className="list-task_form" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Ingrese una tarea..."
+              onChange={(event) => setTarea(event.target.value)}
+              value={tarea}
+            />
+            <button className="form-button" type="submit">
+              Guardar Tarea
+            </button>
+          </form>
+
+          <div className="task-showing-content">
+            {listadoTareas.map((tarea, indice) => {
+              return (
+                <div className="task-showing">
+                  <div className="task-showing_task">
+                    <p key={indice}>{tarea}</p>
+                  </div>
+                  <div className="task-showing_buttons">
+                    <button>✏️</button>
+                    <button>❌</button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </article>
+      </section>
     </>
   );
 }
