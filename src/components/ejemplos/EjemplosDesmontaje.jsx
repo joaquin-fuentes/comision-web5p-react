@@ -7,6 +7,7 @@ function DemoComponent() {
       console.log(":escoba: Desmontado");
     };
   }, []);
+
   return <div>Soy el componente Demo</div>;
 }
 
