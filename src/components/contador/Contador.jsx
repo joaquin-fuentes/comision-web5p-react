@@ -33,12 +33,17 @@ export default function Contador() {
   }
   return (
     <>
-      <h1 style={{ textAlign: "center" }}>CONTADOR</h1>
-      <div>
-        <button onClick={aumentar}>+1</button>
+      <div className="d-flex justify-content-center gap-3 my-5">
+        <button className="btn btn-primary" onClick={aumentar}>
+          +1
+        </button>
         <span>{numero}</span>
-        <button onClick={decrementar}>-1</button>
-        <button onClick={() => setNumero(0)}>RESETEAR</button>
+        <button className="btn btn-primary" onClick={decrementar}>
+          -1
+        </button>
+        <button className="btn btn-primary" onClick={() => setNumero(0)}>
+          RESETEAR
+        </button>
       </div>
     </>
   );

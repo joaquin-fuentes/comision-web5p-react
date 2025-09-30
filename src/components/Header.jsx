@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import "./header.css";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
   const [menu, setMenu] = useState(false);
@@ -47,17 +48,25 @@ export default function Header() {
         <ul className="navbar_menu_links list-unstyled d-flex">
           <li>
             {" "}
-            <a href="#">Inicio</a>
+            <NavLink to="/">Inicio</NavLink>
           </li>
           <li>
             {" "}
-            <a href="#">Contacto</a>
+            <NavLink to="/contador">Contador</NavLink>
+          </li>
+          <li>
+            {" "}
+            <NavLink to="/esculturas">Esculturas</NavLink>
+          </li>
+          <li>
+            {" "}
+            <NavLink to="/tareas">Tareas</NavLink>
           </li>
 
           {usuarioAdministrador && usuarioLogueado ? (
             <li>
               {" "}
-              <a href="#">Admin</a>
+              <NavLink to="/admin">Admin</NavLink>
             </li>
           ) : (
             <></>
@@ -89,14 +98,14 @@ export default function Header() {
                 <li>
                   <button
                     className="navbar_menu_btn-login"
-                    href="#"
+                    to="#"
                     onClick={handleLogin}
                   >
                     Login
                   </button>
                 </li>
                 <li>
-                  <button className="navbar_menu_btn-register" href="#">
+                  <button className="navbar_menu_btn-register" to="#">
                     Registro
                   </button>
                 </li>
