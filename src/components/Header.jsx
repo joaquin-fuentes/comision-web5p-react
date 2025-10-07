@@ -9,14 +9,6 @@ export default function Header() {
 
   const usuarioAdministrador = true;
 
-  function handleLogin() {
-    setUsuarioLogueado(true);
-    Swal.fire({
-      title: "Bien hecho!",
-      text: `Login exitoso`,
-      icon: "success",
-    });
-  }
   function handleLogout() {
     setUsuarioLogueado(false);
     Swal.fire({
@@ -96,18 +88,14 @@ export default function Header() {
             ) : (
               <>
                 <li>
-                  <button
-                    className="navbar_menu_btn-login"
-                    to="#"
-                    onClick={handleLogin}
-                  >
+                  <NavLink className="navbar_menu_btn-login" to="/login">
                     Login
-                  </button>
+                  </NavLink>
                 </li>
                 <li>
-                  <button className="navbar_menu_btn-register" to="#">
+                  <NavLink className="navbar_menu_btn-register" to="/registro">
                     Registro
-                  </button>
+                  </NavLink>
                 </li>
               </>
             )}
