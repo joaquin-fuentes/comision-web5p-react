@@ -1,21 +1,23 @@
 import Swal from "sweetalert2";
 import "./header.css";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { obtenerDelSessionStorage } from "../utils/localStorage.js";
 
 export default function Header() {
   const [menu, setMenu] = useState(false);
-  const [usuarioLogueado, setUsuarioLogueado] = useState(false);
+  const navegacion = useNavigate();
 
-  const usuarioAdministrador = true;
+  const usuarioLogueado = obtenerDelSessionStorage("usuario");
 
   function handleLogout() {
-    setUsuarioLogueado(false);
+    sessionStorage.removeItem("usuario");
     Swal.fire({
       title: "Bien hecho!",
       text: `Sesion cerrada con exito`,
       icon: "success",
     });
+    navegacion("/");
   }
 
   const handleOpenMenu = () => {
@@ -55,7 +57,7 @@ export default function Header() {
             <NavLink to="/tareas">Tareas</NavLink>
           </li>
 
-          {usuarioAdministrador && usuarioLogueado ? (
+          {usuarioLogueado?.rol !== "admin" && usuarioLogueado ? (
             <li>
               {" "}
               <NavLink to="/admin">Admin</NavLink>

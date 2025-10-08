@@ -84,6 +84,7 @@ export default function FormRegister() {
         <Form.Control
           type="password"
           placeholder="Ingrese su password"
+          isInvalid={errors.password}
           {...register("password", {
             required: "El campo es obligatorio",
             minLength: {
@@ -92,7 +93,9 @@ export default function FormRegister() {
             },
           })}
         />
-        <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+        <Form.Control.Feedback type="invalid">
+          {errors.password?.message}
+        </Form.Control.Feedback>{" "}
       </Form.Group>
       <Button variant="primary" type="submit">
         Registrarse

@@ -1,10 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
-import { alumnos } from "../constants/alumnos.js";
 import TablaAlumnos from "../components/admin/TablaAlumnos.jsx";
+import ModalCrearAlumno from "../components/admin/ModalCrearAlumno.jsx";
 
+import { obtenerAlumnos } from "../services/alumnos.service.js";
 export default function AdminPage() {
   const [nombreBuscado, setNombreBuscado] = useState("");
+  const [alumnos, setAlumnos] = useState([]);
+  const [showCrear, setShowCrear] = useState(false);
+
+  // cuanto el componente Cargue necesito traer el listado de alumnos del localstorage
+  // y agregarlo a mi estado
+
+  useEffect(() => {
+    // traer los alumnos del localstorage
+    const alumnosDB = obtenerAlumnos("alumnos");
+    setAlumnos(alumnosDB);
+    // agregar esso alumnos a mi estado "alumnos"
+  }, []);
+
   function handleClickBuscar() {
     Swal.fire({
       title: "Bien hecho!",
@@ -13,11 +27,7 @@ export default function AdminPage() {
     });
   }
   function handleClickAgregar() {
-    Swal.fire({
-      title: "Bien hecho!",
-      text: `El alumno se agregó, con exito.`,
-      icon: "success",
-    });
+    setShowCrear(true);
   }
   const alumnosFiltrados = alumnos.filter((alumno) => {
     return alumno.nombre.toLowerCase().includes(nombreBuscado.toLowerCase());
@@ -56,6 +66,8 @@ export default function AdminPage() {
         </button>
       </div>
       <TablaAlumnos alumnos={alumnosFiltrados}></TablaAlumnos>
+
+      <ModalCrearAlumno showCrear={showCrear} setShowCrear={setShowCrear} />
     </section>
   );
 }
