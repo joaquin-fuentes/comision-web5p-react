@@ -1,20 +1,27 @@
 import React from "react";
 import Swal from "sweetalert2";
+import { eliminarAlumno } from "../../services/alumnos.service.js";
 
-export default function FilaAlumno({ alumno }) {
+export default function FilaAlumno({
+  alumno,
+  setAlumnoEditar,
+  setShowEditar,
+  fetchAlumnos,
+}) {
   function handleClickEditar() {
-    Swal.fire({
-      title: "Bien hecho!",
-      text: `El ${alumno.nombre} se editó`,
-      icon: "success",
-    });
+    setAlumnoEditar(alumno); // asignamos el alumno a editar
+    setShowEditar(true); // abrimos el modal
   }
   function handleClickEliminar() {
+    eliminarAlumno("alumnos", alumno.id);
+
     Swal.fire({
-      title: "Bien hecho!",
-      text: `El ${alumno.nombre} se eliminó`,
+      title: "¡Alumno eliminado!",
+      text: `${alumno.nombre} fue eliminado correctamente`,
       icon: "success",
     });
+    fetchAlumnos();
+    // Podrías actualizar el estado en AdminPage llamando a obtenerAlumnos de nuevo
   }
   return (
     <tr>

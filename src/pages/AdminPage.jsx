@@ -4,19 +4,23 @@ import TablaAlumnos from "../components/admin/TablaAlumnos.jsx";
 import ModalCrearAlumno from "../components/admin/ModalCrearAlumno.jsx";
 
 import { obtenerAlumnos } from "../services/alumnos.service.js";
+import ModalEditarAlumno from "../components/admin/ModalEditarAlumno.jsx";
 export default function AdminPage() {
   const [nombreBuscado, setNombreBuscado] = useState("");
   const [alumnos, setAlumnos] = useState([]);
   const [showCrear, setShowCrear] = useState(false);
+  const [showEditar, setShowEditar] = useState(false);
+  const [alumnoEditar, setAlumnoEditar] = useState(null);
 
   // cuanto el componente Cargue necesito traer el listado de alumnos del localstorage
   // y agregarlo a mi estado
-
-  useEffect(() => {
-    // traer los alumnos del localstorage
+  const fetchAlumnos = () => {
     const alumnosDB = obtenerAlumnos("alumnos");
     setAlumnos(alumnosDB);
-    // agregar esso alumnos a mi estado "alumnos"
+  };
+
+  useEffect(() => {
+    fetchAlumnos();
   }, []);
 
   function handleClickBuscar() {
@@ -65,9 +69,25 @@ export default function AdminPage() {
           Agregar alumno
         </button>
       </div>
-      <TablaAlumnos alumnos={alumnosFiltrados}></TablaAlumnos>
+      <TablaAlumnos
+        alumnos={alumnosFiltrados}
+        setShowEditar={setShowEditar}
+        setAlumnoEditar={setAlumnoEditar}
+        fetchAlumnos={fetchAlumnos}
+      ></TablaAlumnos>
 
-      <ModalCrearAlumno showCrear={showCrear} setShowCrear={setShowCrear} />
+      <ModalCrearAlumno
+        showCrear={showCrear}
+        setShowCrear={setShowCrear}
+        fetchAlumnos={fetchAlumnos}
+      />
+
+      <ModalEditarAlumno
+        showEditar={showEditar}
+        setShowEditar={setShowEditar}
+        alumnoEditar={alumnoEditar}
+        setAlumnos={setAlumnos}
+      />
     </section>
   );
 }

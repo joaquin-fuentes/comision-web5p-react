@@ -1,12 +1,13 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { agregarAlumno } from "../../services/alumnos.service.js";
+import Swal from "sweetalert2";
 
-export default function FormCrearAlumno() {
+export default function FormCrearAlumno({ fetchAlumnos, setShowCrear }) {
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm({
     mode: "onChange",
@@ -21,16 +22,25 @@ export default function FormCrearAlumno() {
 
   function onSubmit(data) {
     console.log(data);
-    // Traer el listado de alumnos
+    // Agregar alumno al localStorage
 
-    // Agregar el alumno a lista de la db
+    agregarAlumno("alumnos", data);
+    // Mostrar mensaje de éxito
 
-    // guardar la lista actualizada en la db
+    Swal.fire({
+      title: "¡Alumno agregado!",
+      text: `${data.nombre} fue agregado correctamente`,
+      icon: "success",
+    });
 
-    // Aviso al usuario que salio bien o mal
+    // Actualizar la tabla de alumnos
 
-    // Limpio el formulario
-    reset();
+    fetchAlumnos();
+
+    // Limpiar el formulario y luego cerrarlo
+
+    //  reset();
+    setShowCrear(false);
   }
 
   return (

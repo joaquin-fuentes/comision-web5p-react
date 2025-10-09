@@ -1,6 +1,11 @@
 import FilaAlumno from "./FilaAlumno";
 
-export default function TablaAlumnos({ alumnos }) {
+export default function TablaAlumnos({
+  alumnos,
+  setAlumnoEditar,
+  setShowEditar,
+  fetchAlumnos,
+}) {
   return (
     <div className="table-responsive justify-content-center m-4">
       {alumnos.length === 0 ? (
@@ -19,7 +24,15 @@ export default function TablaAlumnos({ alumnos }) {
           </thead>
           <tbody>
             {alumnos.map((alumno, indice) => {
-              return <FilaAlumno alumno={alumno} key={indice}></FilaAlumno>;
+              return (
+                <FilaAlumno
+                  alumno={alumno}
+                  key={indice}
+                  setAlumnoEditar={setAlumnoEditar}
+                  setShowEditar={setShowEditar}
+                  fetchAlumnos={fetchAlumnos}
+                ></FilaAlumno>
+              );
             })}
           </tbody>
         </table>
