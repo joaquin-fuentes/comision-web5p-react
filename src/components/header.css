@@ -31,10 +31,16 @@ ul {
 
 .navbar_logo {
   margin: 0px 0px 0px 20px;
+
   h1 {
     font-size: 24px;
     margin: 0px;
     text-align: center;
+  }
+
+  img {
+    width: 3rem;
+    height: 3rem;
   }
 }
 
@@ -123,13 +129,19 @@ li {
 
 .navbar_menu_btn-login {
   background-color: var(--boton-bg);
+  display: flex;
+  justify-content: center;
+
   &:hover {
     background-color: var(--boton-bg);
   }
 }
+
 .navbar_menu_btn-register {
   background-color: var(--boton-bg);
   transition: 0.3s;
+  display: flex;
+  justify-content: center;
 
   &:hover {
     background-color: green;

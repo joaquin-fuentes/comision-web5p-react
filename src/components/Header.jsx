@@ -27,7 +27,7 @@ export default function Header() {
     <header className="d-flex m-auto position-sticky top-0">
       <nav className="navbar d-flex">
         <div className="navbar_logo">
-          <h1>Logo</h1>
+          <img src="./logo.png" alt="logo" />
         </div>
         <div className="navbar_menu d-flex">
           <button className="navbar_menu-btn" onClick={handleOpenMenu}>
@@ -90,12 +90,12 @@ export default function Header() {
             ) : (
               <>
                 <li>
-                  <NavLink className="navbar_menu_btn-login" to="/login">
+                  <NavLink className="navbar_menu_btn-login text-center" to="/login">
                     Login
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink className="navbar_menu_btn-register" to="/registro">
+                  <NavLink className="navbar_menu_btn-register text-center" to="/registro">
                     Registro
                   </NavLink>
                 </li>

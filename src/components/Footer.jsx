@@ -1,4 +1,5 @@
 import Swal from "sweetalert2";
+import "./footer.css";
 
 export default function Footer() {
   function hundleRedes(nombreRed) {
@@ -6,91 +7,83 @@ export default function Footer() {
       title: "Bien hecho!",
       text: `Cliqueaste en ${nombreRed}`,
       icon: "success",
+      confirmButtonColor: "#dc3545",
     });
   }
+
   return (
-    <footer className="bg-danger">
-      <div className="container text-center bg-secondary">
-        <div className="row">
-          <div className="col">
-            <div>
-              <img src="https://imgs.search.brave.com/J1Pm_mAZs_FpXtGEbIc81iHCNGMPSHSJXm13LU1clfU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc2Vla2xvZ28u/Y29tL2xvZ28tcG5n/LzExLzIvcHJvdGVj/LWluZm9ybWF0aWNh/LWxvZ28tcG5nX3Nl/ZWtsb2dvLTExMzAz/OC5wbmc"></img>
-            </div>
+    <footer className="footer bg-dark text-light py-4">
+      <div className="container">
+        <div className="row align-items-center gy-4">
+          {/* LOGO */}
+          <div className="col-12 col-md-3 text-center text-md-start">
+            <img
+              src="https://imgs.search.brave.com/J1Pm_mAZs_FpXtGEbIc81iHCNGMPSHSJXm13LU1clfU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc2Vla2xvZ28u/Y29tL2xvZ28tcG5n/LzExLzIvcHJvdGVj/LWluZm9ybWF0aWNh/LWxvZ28tcG5nX3Nl/ZWtsb2dvLTExMzAz/OC5wbmc"
+              alt="Logo"
+              className="footer-logo"
+            />
           </div>
-          <div className="col order-2">
-            <div className="container text-center">
-              <div className="row">
-                <div className="col-6 col-sm-4 text-danger fw-bold">
-                  <a href="#">Incio</a>
-                </div>
-                <div className="w-100 d-none d-md-block">
-                  <div className="col-6 col-sm-4">
-                    <a href="#">Categorías</a>
-                  </div>
-                  <div className="col-6 col-sm-4">
-                    <a href="#">Medios de pago</a>
-                  </div>
-                  <div className="col-6 col-sm-4">
-                    <a href="#">Galería</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+          {/* LINKS */}
+          <div className="col-12 col-md-3 text-center">
+            <h5 className="footer-title">Navegación</h5>
+            <ul className="list-unstyled footer-links">
+              <li><a href="#">Inicio</a></li>
+              <li><a href="#">Categorías</a></li>
+              <li><a href="#">Medios de pago</a></li>
+              <li><a href="#">Galería</a></li>
+            </ul>
           </div>
-          <div className="col order-3">
-            <div className="row">
-              <div className="col-6 text-danger fw-bold">Contáctanos</div>
-              <div className="w-100 d-none d-md-block">
-                <div className="col-6">
-                  <a href="#">+54 9 381 325-45621</a>
-                </div>
-                <div className="col-6">
-                  <a href="#">usuario123@gmail.com</a>
-                </div>
-              </div>
-            </div>
+
+          {/* CONTACTO */}
+          <div className="col-12 col-md-3 text-center">
+            <h5 className="footer-title">Contáctanos</h5>
+            <ul className="list-unstyled footer-links">
+              <li><a href="tel:+5438132545621">+54 9 381 325-45621</a></li>
+              <li><a href="mailto:usuario123@gmail.com">usuario123@gmail.com</a></li>
+            </ul>
           </div>
-          <div className="col order-4">
-            <div className="redes-sociales">
-              <div className="container text-center">
-                <div className="row row-cols-2">
-                  <div className="col">
-                    <a href="#" onClick={() => hundleRedes("Facebook")}>
-                      <img
-                        src="https://imgs.search.brave.com/tQngT1UmSmEh9hh9Znlp7pqX9Q9N9gixCZU-U4ti_xs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly8xMDAw/bWFyY2FzLm5ldC93/cC1jb250ZW50L3Vw/bG9hZHMvMjAxOS8x/Mi9GYWNlYm9vay1M/b2dvdGlwby02MDB4/MzM4LmpwZw"
-                        alt="Logo-Facebook"
-                      />
-                    </a>
-                  </div>
-                  <div className="col">
-                    <a href="#" onClick={() => hundleRedes("Instagram")}>
-                      <img
-                        src="https://imgs.search.brave.com/G6BtrupA5bS-bTEYo7OOpqZBfMwksZgxuRTf-c9w5QE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/dmVjdG9yLXByZW1p/dW0vaWNvbm8tbG9n/b3RpcG8taW5zdGFn/cmFtXzYyODQwNy0x/OTI0LmpwZz9zZW10/PWFpc19oeWJyaWQm/dz03NDAmcT04MA"
-                        alt="Logo-Instagram"
-                      />
-                    </a>
-                  </div>
-                  <div className="col">
-                    <a href="#" onClick={() => hundleRedes("X")}>
-                      <img
-                        src="https://imgs.search.brave.com/oCx0O2LNQqHmuz9u-bod4Dy--82w-Z7Ja7tWOVDdspg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/dmVjdG9yLWdyYXRp/cy9udWV2by1pY29u/by10d2l0dGVyLWxv/Z28teC1zb2JyZS1m/b25kby1uZWdyb18x/MDE3LTQ1NDI3Lmpw/Zz9zZW10PWFpc19p/bmNvbWluZyZ3PTc0/MCZxPTgw"
-                        alt="Logo-X"
-                      />
-                    </a>
-                  </div>
-                  <div className="col">
-                    <a href="#" onClick={() => hundleRedes("Youtube")}>
-                      <img
-                        src="https://imgs.search.brave.com/AViV90FHMDf1UOo4VLOxiiFX0uaIYUfYAmPVeFj8hdE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi90ZXh0/by1kZS15b3V0dWJl/LWNvbi12ZWN0b3It/ZGVsLWljb25vLWxv/Z290aXBvLTEzMzc0/MjA5Ny5qcGc"
-                        alt="Logo-Youtube"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
+
+          {/* REDES SOCIALES */}
+          <div className="col-12 col-md-3 text-center">
+            <h5 className="footer-title">Síguenos</h5>
+            <div className="d-flex justify-content-center gap-3">
+              <a href="#" onClick={() => hundleRedes("Facebook")}>
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png"
+                  alt="Facebook"
+                  className="social-icon"
+                />
+              </a>
+              <a href="#" onClick={() => hundleRedes("Instagram")}>
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+                  alt="Instagram"
+                  className="social-icon"
+                />
+              </a>
+              <a href="#" onClick={() => hundleRedes("X")}>
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/5968/5968958.png"
+                  alt="X"
+                  className="social-icon"
+                />
+              </a>
+              <a href="#" onClick={() => hundleRedes("Youtube")}>
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/3670/3670147.png"
+                  alt="Youtube"
+                  className="social-icon"
+                />
+              </a>
             </div>
           </div>
         </div>
+
+        <hr className="mt-4 mb-2 border-secondary" />
+        <p className="text-center text-white small mb-0">
+          © {new Date().getFullYear()} Tu Empresa. Todos los derechos reservados.
+        </p>
       </div>
     </footer>
   );
