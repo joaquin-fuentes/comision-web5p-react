@@ -5,14 +5,14 @@ import { alumnos } from "../constants/alumnos.js";
 import Footer from "../components/Footer.jsx";
 
 export default function HomePage() {
-  const tituloDeLaSeccion = "Listado de los mejores alumnos de RollingCode";
+  const tituloDeLaSeccion = "Ranking de alumnos de RollingCode";
 
   return (
     <>
       <main>
         <Portada
           titulo={tituloDeLaSeccion}
-          subTitulo="Hola soy un subtitulo"
+          subTitulo="Conocé a los estudiantes destacados del curso Fullstack"
         ></Portada>
         <br />
         <div className="contenedorTarjetas">
