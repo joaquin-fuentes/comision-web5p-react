@@ -40,15 +40,8 @@ export function agregarAlumno(key, alumnoNuevo) {
 export function eliminarAlumno(key, id) {
   // Obtenemos todos los alumnos
   const alumnos = obtenerAlumnos(key);
-
   // Creamos un nuevo array sin el alumno que queremos eliminar
-  const alumnosFiltrados = [];
-  for (let i = 0; i < alumnos.length; i++) {
-    if (alumnos[i].id !== id) {
-      alumnosFiltrados.push(alumnos[i]);
-    }
-  }
-
+  const alumnosFiltrados = alumnos.filter((alumno) => alumno.id !== id);
   // Guardamos el array actualizado
   guardarAlumnos(key, alumnosFiltrados);
 }

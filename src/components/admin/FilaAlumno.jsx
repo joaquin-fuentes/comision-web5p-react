@@ -13,8 +13,9 @@ export default function FilaAlumno({
     setShowEditar(true); // abrimos el modal
   }
   function handleClickEliminar() {
+    const confirmar = confirm("Seguro que desea eliminar al alumno?");
+    if (!confirmar) return;
     eliminarAlumno("alumnos", alumno.id);
-
     Swal.fire({
       title: "¡Alumno eliminado!",
       text: `${alumno.nombre} fue eliminado correctamente`,

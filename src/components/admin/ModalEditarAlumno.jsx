@@ -15,7 +15,6 @@ export default function ModalEditarAlumno({
     handleSubmit,
     setValue,
     formState: { errors },
-    reset,
   } = useForm({
     mode: "onChange",
     defaultValues: {
@@ -51,8 +50,6 @@ export default function ModalEditarAlumno({
     // Actualizamos la lista de alumnos en el estado padre
     const alumnosActualizados = JSON.parse(localStorage.getItem("alumnos"));
     setAlumnos(alumnosActualizados);
-
-    reset();
     setShowEditar(false);
   }
 
