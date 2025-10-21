@@ -46,6 +46,10 @@ export default function Header() {
           </li>
           <li>
             {" "}
+            <NavLink to="/contacto">Contacto</NavLink>
+          </li>
+          <li>
+            {" "}
             <NavLink to="/contador">Contador</NavLink>
           </li>
           <li>
@@ -90,12 +94,18 @@ export default function Header() {
             ) : (
               <>
                 <li>
-                  <NavLink className="navbar_menu_btn-login text-center" to="/login">
+                  <NavLink
+                    className="navbar_menu_btn-login text-center"
+                    to="/login"
+                  >
                     Login
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink className="navbar_menu_btn-register text-center" to="/registro">
+                  <NavLink
+                    className="navbar_menu_btn-register text-center"
+                    to="/registro"
+                  >
                     Registro
                   </NavLink>
                 </li>
