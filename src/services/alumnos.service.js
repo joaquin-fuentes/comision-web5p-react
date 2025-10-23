@@ -67,3 +67,17 @@ export function editarAlumno(key, id, alumnoActualizado) {
   // Guardamos el array actualizado
   guardarAlumnos(key, alumnosEditados);
 }
+
+// ===========================
+// OBTENER UN ALUMNO POR ID
+// ===========================
+export function obtenerAlumnoPorId(key, id) {
+  // Obtenemos todos los alumnos
+  const alumnos = obtenerAlumnos(key);
+
+  // Buscamos el alumno que tenga el ID especificado
+  const alumnoEncontrado = alumnos.find((alumno) => alumno.id === id);
+
+  // Retornamos el alumno encontrado o null si no existe
+  return alumnoEncontrado || null;
+}
