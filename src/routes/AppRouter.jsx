@@ -11,6 +11,7 @@ import AdminRoutes from "./AdminRoutes.jsx";
 import RegisterPage from "../pages/RegisterPage.jsx";
 import LoginPage from "../pages/LoginPage.jsx";
 import ContactPage from "../pages/ContactPage.jsx";
+import DetallePage from "../pages/DetallePage.jsx";
 
 export default function AppRouter() {
   return (
@@ -21,6 +22,7 @@ export default function AppRouter() {
         <Route path="/contador" element={<CounterPage />} />
         <Route path="/contacto" element={<ContactPage />} />
         <Route path="/registro" element={<RegisterPage />} />
+        <Route path="/detalle/:id" element={<DetallePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/esculturas" element={<SculpturesPage />} />
         <Route path="/tareas" element={<TasksPage />} />

@@ -9,6 +9,14 @@ export function obtenerAlumnos(key) {
   return datos ? JSON.parse(datos) : [];
 }
 
+export function obtenerUnAlumnoPorId(id) {
+  const todosLosALumnos = obtenerAlumnos("alumnos");
+  // recorrer el listado y devolver solamente el que tenga un id igual al que estoy buscando
+  const alumnoEncontrado = todosLosALumnos.find((alumno) => alumno.id === id);
+  // devolver el alumno encontrado
+  return alumnoEncontrado ? alumnoEncontrado : null;
+}
+
 // ===========================
 // GUARDAR ALUMNOS
 // ===========================

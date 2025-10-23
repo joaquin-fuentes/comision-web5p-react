@@ -1,6 +1,7 @@
 import React from "react";
 import Swal from "sweetalert2";
 import { eliminarAlumno } from "../../services/alumnos.service.js";
+import { Link } from "react-router-dom";
 
 export default function FilaAlumno({
   alumno,
@@ -32,6 +33,9 @@ export default function FilaAlumno({
       <td className="">{alumno.marca}</td>
       <td className="">{alumno.pelicula}</td>
       <td className="d-flex justify-content-around">
+        <Link to={`/detalle/${alumno.id}`} className="btn btn-outline-info">
+          Ver detalle
+        </Link>
         <button
           type="button"
           onClick={handleClickEditar}
