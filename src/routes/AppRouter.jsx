@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "../pages/HomePage.jsx";
 import Error404Page from "../pages/Error404Page.jsx";
 import AdminPage from "../pages/AdminPage.jsx";
+import AlumnoDetallePage from "../pages/AlumnoDetallePage.jsx";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 import CounterPage from "../pages/CounterPage.jsx";
@@ -28,6 +29,11 @@ export default function AppRouter() {
         <Route path="/tareas" element={<TasksPage />} />
         <Route element={<AdminRoutes />}>
           <Route path="/admin" element={<AdminPage />}></Route>
+          {/* Ruta para ver el detalle de un alumno específico */}
+          <Route
+            path="/admin/alumno/:id"
+            element={<AlumnoDetallePage />}
+          ></Route>
         </Route>
         <Route path="*" element={<Error404Page />} />
       </Routes>
